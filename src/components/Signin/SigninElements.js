@@ -2,31 +2,41 @@ import styled from 'styled-components'
 import { Link } from 'react-router-dom'
 
 export const Container = styled.div`
-    min-height: 692px;
-    position: fixed;
+    min-height: 100px;
+    position: center;
     bottom: 0;
-    left: 927px;
+    left: 100px;
     right: 0;
-    top: 200px;
+    top: 100px;
     z-index: 0;
     overflow: hidden;
-    background: linear-gradient(
-        108deg,
-        rgba(1, 147, 86, 1) 0%
-        rgba(10, 201, 122, 1) 100%
-    );
-`
+`;
 
-export const Icon = styled(Link)`
-    margin-left:32px;
-    margin-top:32px;
-    text-decoration: none;
-    color: #01bf71;
-    font-weight: 700;
-    font-size: 32px;
+export const DashboardBtn =styled.nav`
+    min-height: 100px;
+    display: flex;
+    align-items: center;
 
-    @media screen and (max-width: 480px) {
-        margin-left: 16px;
-        margin-top: 8px;
+    @media screen and (max-width: 768px) {
+        display: none;
     }
-`
+`;
+
+export const DashboardBtnLink = styled(Link)` 
+    border-radius: 100px;
+    background: #01bf71;
+    white-space: nowrap;
+    padding: 5px 30px;
+    color: #010600;
+    font-size: 24px;
+    outline: none;
+    border: none;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+    text-decoration: none;
+    &:hover {
+        transition: all 0.2s ease-in-out;
+        background: #ffffff;
+        color: #010606
+    }
+`;
