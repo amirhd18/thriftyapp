@@ -1,22 +1,22 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import {BrowserRouter as Router, Switch, Route} from 'react-router-dom'
+import Home from './pages';
+import SigninPage from './pages/signin';
 import Amplify from 'aws-amplify';
 import config from './aws-exports';
-import { withAuthenticator, AmplifySignOut } from '@aws-amplify/ui-react'
-
 Amplify.configure(config);
 
 function App() {
   return (
-    <div className="App">
-      <header>
-        <img src={logo} className="App-logo" alt="logo" />
-        <h1>We now have Auth!</h1>
-      </header>
-      <AmplifySignOut />
-    </div>
+    <Router>
+      <Switch>
+        <Route path="/" component={Home} exact />
+        <Route path="/signin" component={SigninPage} exact />
+      </Switch>
+    </Router> 
   );
 }
 
-export default withAuthenticator(App);
+
+export default App;
